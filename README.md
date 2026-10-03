@@ -1,24 +1,57 @@
-# Computer Science & Machine Learning Portfolio
+# Walmart Sales Demand Forecasting
 
-This repository serves as an index to my selected technical work.
+A machine learning regression project for forecasting **Weekly_Sales** using Walmart retail data.
 
-## Featured Projects
+This project was developed from my machine learning final project and demonstrates feature engineering, time-aware train/test splitting, model comparison, hyperparameter tuning, error analysis, and feature importance.
 
-### Heart Disease Prediction
-Machine learning classification project using a Scikit-learn preprocessing pipeline and Logistic Regression.
+## Project Highlights
 
-https://github.com/yars12/heart-failure-prediction
+- Engineered date features including Year, Month, Day, and WeekOfYear
+- Used a time-aware 80/20 split when date information was available
+- Compared 5 regression approaches
+- Tuned Random Forest and SVR with `RandomizedSearchCV`
+- Evaluated models using RMSE, MAE, and R²
+- Used permutation importance to interpret the final model
+- Analyzed seasonal, holiday, store, and economic factors
 
-### Sorting Algorithm Performance Benchmark
-Python benchmark comparing Bubble Sort, Selection Sort, and Insertion Sort across increasing input sizes.
+## Models Compared
 
-https://github.com/yars12/tcss321-sorting
+- Linear Regression
+- K-Nearest Neighbors Regressor
+- Support Vector Regression
+- Random Forest Regressor
+- Gradient Boosting Regressor
 
-### Portfolio Website
-A concise overview of my technical background and featured projects.
+## Best Model
 
-https://yars12.github.io/
+The tuned Random Forest produced the strongest performance in the completed notebook run.
 
-## Focus Areas
+| Metric | Score |
+|---|---:|
+| RMSE | 164,357.75 |
+| MAE | 93,374.34 |
+| R² | 0.9045 |
 
-Machine Learning · Artificial Intelligence · Data Science · Python · SQL · Algorithms · Business Intelligence
+The baseline Random Forest was also strong with an R² of approximately **0.9025**, while Gradient Boosting reached approximately **0.8644**.
+
+## Technologies
+
+Python · Pandas · NumPy · Scikit-learn · Matplotlib · Seaborn
+
+## Repository Files
+
+- `walmart_sales_demand_forecasting.py` — cleaned forecasting workflow
+- `requirements.txt` — Python dependencies
+
+The script expects a dataset named `Walmart.csv`.
+
+## Run
+
+```bash
+pip install -r requirements.txt
+python walmart_sales_demand_forecasting.py
+```
+
+## Skills Demonstrated
+
+Regression · Demand Forecasting · Feature Engineering · Time-Aware Validation · Hyperparameter Tuning · Model Evaluation · Feature Importance · Python
